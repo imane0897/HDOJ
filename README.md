@@ -11,9 +11,16 @@ char *strcat(char *dest, const char *src)
 int strcmp(const char *str1, const char *str2)
 // 复制
 char *strcpy(char *dest, const char *str2)
+// memset
+void *memset(void *ptr, int value, size_t num)
 ```
 
+### stdlib.h
 
+```C
+int abs(int x)
+// 返回 x 的绝对值
+```
 
 ### math.h
 
@@ -37,8 +44,10 @@ INT_MIN
 
 ```C
 // 读入
-scanf("%s", s);
-gets(s);
+scanf("%s", s); // 遇到空格结束
+gets(s);        // 遇到回车结束
+// 读入字符串直到文件尾
+while (gets(s)) {}
 // 遍历
 for (p = s; *p != '\0'; p++) {}
 #include <string.h>
@@ -61,9 +70,43 @@ void swap(int *a, int *b)
 
 ### qsort 排序
 
-```C
-
+```c
+// function
+void qsort(void *base, size_t num, size_t size, int(*compare)(const void*, const void*))
+// example
+#include <stdlib.h>
+int cmp(const void * a, const void * b)
+{
+    return *(int*)a - *(int*)b;
+}
+int main(void)
+{
+    int array[] = {4, 1, 10, 9, 2, 5};
+    qsort(array, 6, sizeof(int), cmp);
+}
 ```
 
 ### 文件读写
 
+### 求最大公约数
+
+```c
+int gcd(int a, int b)
+{
+    while (a != b)
+    {
+        if (a > b)
+        {
+            a -= b;
+        }
+        else
+        {
+            b -= a;
+        }
+    }
+    return a;
+}
+```
+
+### 汉字统计
+汉字的 ASCII 值为负，且一个汉字占两个字符。（题目；2030）
