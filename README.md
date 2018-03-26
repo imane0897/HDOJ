@@ -84,9 +84,39 @@ int main(void)
     int array[] = {4, 1, 10, 9, 2, 5};
     qsort(array, 6, sizeof(int), cmp);
 }
+//	结构体排序
+int cmp(const void *a, const void *b)
+{
+    return ((struct name*)a)->item - ((struct naem*)b)->item;
+}
+qsort(array, 6, sizeof(struct name), cmp)
 ```
 
 ### 文件读写
+
+```C
+FILE *fp;
+// 文件打开
+if ((fp=fopen("C:\\f12.txt", "r"))==NULL)
+{
+    printf("File Open Error.\n");
+    exit(0);
+}
+// 文件关闭
+if (fclose(fp))
+{
+    printf("Cannot Close the File.\n");
+    exit(0);
+}
+// 格式化方式读写
+fscanf(fp, "%d", &n);
+fprintf(fp, "%d", n);
+// 字符方式读写
+ch = fget(fp);
+fputc(ch, fp);
+```
+
+
 
 ### 求最大公约数
 
@@ -110,3 +140,22 @@ int gcd(int a, int b)
 
 ### 汉字统计
 汉字的 ASCII 值为负，且一个汉字占两个字符。（题目；2030）
+
+### 多边形面积
+
+```C
+double cross_product(double x1, double y1, double x2, double y2)
+{
+    return x1 * y2 - x2 * y1;
+}
+int main(void)
+{
+    for (i = 0; i < n - 1; ++)
+    {
+        sum += cross_product(x[i], y[i], x[i+1], y[i+1]) / 2;
+    }
+    sum += cross_product(x[i], y[i], x[0], y[0]) / 2;
+}
+```
+
+（题目：2036）
