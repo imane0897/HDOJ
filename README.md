@@ -159,3 +159,21 @@ int main(void)
 ```
 
 （题目：2036）
+
+### 排列组合公式
+
+C(n, m) = m ! / (n ! *(m - n)!)
+
+A(n, m) = m! / (m - n)!
+
+### 卡特兰数
+
+[卡特兰数-维基百科](https://zh.wikipedia.org/wiki/卡塔兰数)
+
+![C_0 = 1 \quad \mbox{and} \quad C_{n+1}=\frac{2(2n+1)}{n+2}C_n,](https://wikimedia.org/api/rest_v1/media/math/render/svg/2457ef163463e291b935bfb0b732f72ab99eec5a)
+
+### 最短路径
+
+
+
+### 最长公共子序列

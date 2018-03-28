@@ -21,7 +21,7 @@ int main(void)
         if (n == 1)
         {
             printf("%c\n", c);
-            break;
+            continue;
         }
 
         for (int i = 0; i < (2 * n - 1) / 2; i++)
